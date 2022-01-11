@@ -1,0 +1,45 @@
+.clients-list {
+    @extend %reset-ul;
+    margin-top: 30px; 
+
+    @media screen and (max-width:767px) {
+        @include for-grid-columns (2);      
+    }
+
+    @media screen and (min-width: 768px) {
+        @include for-grid-columns (3);
+    }
+
+    @media screen and (min-width: 1200px) {
+        @include for-grid-columns (6);
+        margin-top: 50px; 
+    }
+}
+
+.clients-list__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 92px;
+
+    border: 1px solid $icon-fill;
+    border-radius: 4px;
+
+    transition: border $transition-function;
+
+    &:hover, &:focus {
+        border: 1px solid $brand-color;
+    }
+}
+
+.clients-list__icon {
+    fill: $icon-fill;
+
+    transition: fill $transition-function;
+}
+
+.clients-list__link:hover .clients-list__icon,
+.clients-list__link:focus .clients-list__icon {
+    fill: $brand-color;
+}

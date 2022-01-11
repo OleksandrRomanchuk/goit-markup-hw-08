@@ -1,0 +1,164 @@
+.contacts {
+    @extend %reset-ul;
+}   
+
+.contacts--for-header {
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        margin-top: auto;  
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-left: auto;  
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+.contacts--for-footer {
+    @media screen and (max-width: 1199px) {
+        margin-top: 8px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        margin-top: 9px;
+    }
+}
+
+
+.contacts__contact--for-header:not(:last-child) {
+    @media screen and (max-width: 767px) {
+        margin-top: 32px; 
+    }
+}
+
+.contacts__contact--for-header {
+    transition: transform $transition-function;
+}
+
+.contacts__contact--for-header:not(:first-child) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-top: 10px; 
+    } 
+
+    @media screen and (min-width: 1200px) {
+        margin-left: 30px; 
+    } 
+}
+
+.contacts__contact--for-footer:not(:first-child) {
+    @media screen and (max-width: 1199px) {
+        margin-top: 8px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-top: 9px;
+    }
+}
+
+.contacts__link {
+    transition: color $transition-function;
+
+    &:hover, &:focus {
+        color: $brand-color
+    }
+}
+
+.contacts__link--for-header { 
+    font-family: $font-primary;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $primary-font-color;
+
+    font-style: normal;
+    text-decoration: none;
+
+    transition: font-size $transition-function;
+
+    @media screen and (max-width: 767px) {
+        @include for-contacts-link--header (24px, 1.17);
+        transition: font-size $transition-function;
+    }   
+    
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: left;
+        align-items: center; 
+
+        @include for-contacts-link--header (12px, 1.14);
+    } 
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        @include for-contacts-link--header ($secondary-font-size, 1.14);
+    } 
+}
+
+.contacts__link--for-header:hover,
+.contacts__link--for-header:focus {
+    @include for-contacts-link--header (34px, 1.18);
+}
+
+// .contacts__link--call {
+//     @media screen and (max-width: 767px) {
+//         @include for-contacts-link--header (34px, 1.18);
+//         color: $brand-color;
+//     }
+// } 
+
+.contacts__contact--for-header:nth-child(1):hover + .contacts__contact--for-header:nth-child(2),
+.contacts__contact--for-header:nth-child(1):focus + .contacts__contact--for-header:nth-child(2) {
+    transform: translateY(11px);
+}
+
+.contacts__link--for-footer {
+    @include for-links-text ($font-primary, 400, $secondary-font-size, 1.71, $main-letter-spacing, rgba(255, 255, 255, 0.6));
+    font-style: normal;
+}
+
+.contacts__icon {
+    fill: $primary-font-color;
+
+    transition: fill $transition-function;
+
+    @media screen and (max-width: 767px) {
+        display: none;   
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-right: 8px;
+        width: 14px;
+        height: 10px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-right: 10px;
+    }
+}
+
+.contacts__icon--call {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 10px;
+        height: 14px;
+    }
+}
+
+.contacts__link:hover .contacts__icon,
+.contacts__link:hover .contacts__icon {
+    fill: $brand-color;
+}
+
+
+
+
+

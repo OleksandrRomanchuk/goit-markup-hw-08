@@ -1,0 +1,23 @@
+@import "./utils/veriables";
+@import "./utils/visually-hidden";
+@import "./utils/placeholders";
+@import "./utils/mixins";
+
+@import "./base/body";
+@import "./base/section";
+
+@import "./components/container";
+@import "./components/logo";
+@import "./components/contacts";
+@import "./components/button";
+@import "./components/social-links";
+
+@import "./layuots/header";
+@import "./layuots/hero-section";
+@import "./layuots/advantages-section";
+@import "./layuots/services-section";
+@import "./layuots/team-section";
+@import "./layuots/clients-section";
+@import "./layuots/footer";
+@import "./layuots/backdrop";
+@import "./layuots/portfolio-section";

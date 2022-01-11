@@ -1,0 +1,57 @@
+.section__team {
+    background-color: $background-color-light;
+}
+
+.team-list {
+    @extend %reset-ul;
+    margin-top: 30px;
+
+    @media screen and (max-width: 767px) {
+        @include for-grid-columns (1);
+    }
+
+    @media screen and (min-width:768px) {
+        @include for-grid-columns (2);
+    }
+
+    @media screen and (min-width: 1200px) {
+        @include for-grid-columns (4);
+        margin-top: 50px;
+    }
+}
+
+.team-list__card {
+    background-color: $white-color;
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team-list__image {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+
+.team-list__info-wrapper {
+    padding-top: 30px;
+    padding-bottom: 24px;
+
+    text-align: center; 
+}
+
+.team-list__name,
+.team-list__position {
+    @extend %reset-h-p;
+}
+
+.team-list__name {
+    @include for-header (500, $primary-font-size, 1.18, $main-letter-spacing);
+}
+
+.team-list__position {
+    margin-top: 10px;
+    
+    @include for-text (400, $primary-font-size, 1.18)
+}

@@ -1,0 +1,44 @@
+.advantages-list {
+    @extend %reset-ul;
+
+    @media screen and (max-width: 768px) {
+        @include for-grid-columns (1);    
+    }
+
+    @media screen and (min-width: 768px) {
+        @include for-grid-columns (2);    
+    }
+
+    @media screen and (min-width: 1200px) {
+        @include for-grid-columns (4);    
+    }
+}
+
+.advantages-list__icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 120px;
+
+    background-color: $background-color-light;
+}
+
+.advantages-list__item-title {
+    @extend %reset-h-p;
+    @include for-uppercase-header ($black-color);
+    margin-top: 30px;
+
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
+}
+
+.advantages-list__item-text {
+    @extend %reset-h-p;
+    font-size: $secondary-font-size;
+    line-height: 1.71;
+
+    margin-top: 10px;
+}

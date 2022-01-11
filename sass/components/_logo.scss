@@ -1,0 +1,24 @@
+.logo {
+    display: inline-block;
+
+    @media screen and (max-width: 1199px) {
+        @include for-links-text ($font-secondary, 700, 24px, 1.17, 0.03em, $brand-color);
+    }
+    
+    @media screen and (min-width: 1200px) {
+        @include for-links-text ($font-secondary, 700, 26px, 1.19, 0.03em, $brand-color);
+    }
+}
+
+.logo--for-header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logo__second-part--black {
+    color: #000000;
+}
+
+.logo__second-part--white {
+    color: $white-color;
+}
