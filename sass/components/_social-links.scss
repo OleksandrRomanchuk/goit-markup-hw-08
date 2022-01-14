@@ -1,58 +1,90 @@
 .social-networks {
-    @extend %centering;
-    @extend %reset-ul;
+  @extend %centering;
+  @extend %reset-ul;
 }
 
-.social-networks--for-menu {
-    margin-top: 64px;
-    margin-left: 0;
+.social-networks--for-header {
+  margin-top: 64px;
+  margin-left: 0;
 
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
+  @media screen and (max-width: 449px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 230px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .social-networks--for-footer,
 .social-networks--for-team-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 
-    max-width: 206px;
+  max-width: 206px;
 }
 
 .social-networks--for-team-section {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .social-networks--for-footer {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.social-networks__item--for-menu {
+.social-networks__item--for-header {
+  @media screen and (min-width: 450px) {
     display: inline-block;
+  }
 }
 
-.social-networks__item--for-menu:not(:first-child) {
+.social-networks__item--for-header:not(:first-child) {
+  @media screen and (min-width: 450px) {
     position: relative;
 
     margin-left: 20px;
 
     &::before {
-        position: absolute;
-        left: -10px;
-        
-        content: "";
-        display: block;
+      position: absolute;
+      left: -10px;
 
-        width: 1px;
-        height: 22px;
+      content: "";
+      display: block;
 
-        background-color: rgba(33, 33, 33, 0.2);
+      width: 1px;
+      height: 22px;
+
+      background-color: rgba(33, 33, 33, 0.2);
     }
+  }
 }
 
 .social-networks__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  transition: background-color $transition-function;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-color;
+  }
+}
+
+.social-networks__link--for-header {
+  @include for-links-text($font-primary, 500, 18px, 1.22, 0.02em, $brand-color);
+
+  @media screen and (max-width: 449px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,41 +92,53 @@
     width: 44px;
     height: 44px;
 
+    background-color: $icon-fill;
     border-radius: 50%;
 
     transition: background-color $transition-function;
 
-    &:hover, &:focus {
-        background-color: $brand-color;
+    &:hover,
+    &:focus {
+      background-color: $brand-color;
     }
-}
-
-.social-networks__link--for-menu {
-    @include for-links-text ($font-primary, 500, 18px, 1.22, 0.02em, $brand-color); 
+  }
 }
 
 .social-networks__link--white {
-    background-color: $white-color;
+  background-color: $white-color;
 }
 
 .social-networks__link--dark {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-networks__icon {
-    transition: fill $transition-function;
+  transition: fill $transition-function;
+}
+
+.social-networks__icon--for-header {
+  @media screen and (min-width: 450px) {
+    display: none;
+  }
 }
 
 .social-networks__link:hover .social-networks__icon,
 .social-networks__link:focus .social-networks__icon {
-    fill: $white-color;
+  fill: $white-color;
 }
 
 .social-networks__icon--grey {
-    fill: $icon-fill;
+  fill: $icon-fill;
 }
 
 .social-networks__icon--white {
-    fill: $white-color;
+  fill: $white-color;
 }
 
+.social-networks__text {
+  display: inline-block;
+
+  @media screen and (max-width: 449px) {
+    display: none;
+  }
+}
