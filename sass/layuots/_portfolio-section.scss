@@ -1,119 +1,120 @@
 .filters {
-    @extend %reset-ul;
+  @extend %reset-ul;
 
-    display: flex;
+  display: flex;
 
-    @media screen and (max-width: 767px) {
-        flex-wrap: wrap;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
 
-        margin-left: -8px;
-        margin-top: -15px;
-    }
+    margin-left: -8px;
+    margin-top: -15px;
+  }
 }
 
 .filters__item {
-    margin-left: 8px;
+  margin-left: 8px;
 
-    @media screen and (max-width: 767px) {
-        margin-top: 15px;
-    }
-} 
+  @media screen and (max-width: 767px) {
+    margin-top: 15px;
+  }
+}
 
 .portfolio-list {
-    @extend %reset-ul;
+  @extend %reset-ul;
 
-    @media screen and (max-width: 767px) {
-        margin-top: 40px;
+  @media screen and (max-width: 767px) {
+    margin-top: 40px;
 
-        @include for-grid-columns (1) 
-    }
+    @include for-grid-columns(1);
+  }
 
-    @media screen and (min-width: 768px) {
-        margin-top: 30px;
-        
-        @include for-grid-columns (2)
-    }
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
 
-    @media screen and (min-width: 1200px) {
-        margin-top: 50px;
+    @include for-grid-columns(2);
+  }
 
-        @include for-grid-columns (3)
-    }
+  @media screen and (min-width: 1200px) {
+    margin-top: 50px;
+
+    @include for-grid-columns(3);
+  }
 }
 
 .portfolio-list__link {
-    height: 100%;
+  height: 100%;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    @media screen and (min-width: 768px) and (max-width: 1199px) {
-        display: flex;
-        flex-direction: column;
-    }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .portfolio-list__overlay {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-list__overlay-text {
-    position: absolute;
-    top: 294px;
-    left: 0;
+  position: absolute;
+  top: 294px;
+  left: 0;
 
-    width: 100%;
-    height: 100%;
-    @extend %reset-h-p;
-    padding: 77px 24px;
+  width: 100%;
+  height: 100%;
+  @extend %reset-h-p;
+  padding: 77px 24px;
 
-    @include for-text (400, 18px, 1.56);
-    letter-spacing: $main-letter-spacing;
-    color: $white-color;
+  @include for-text(400, 18px, 1.56);
+  letter-spacing: $main-letter-spacing;
+  color: $white-color;
 
-    background-color: $brand-color;
+  background-color: $brand-color;
 
-    transition: transform $transition-function;
+  transition: transform $transition-function;
 }
 
 .portfolio-list__link:hover .portfolio-list__overlay-text,
 .portfolio-list__link:focus .portfolio-list__overlay-text {
-    transform: translateY(-294px);
+  transform: translateY(-294px);
 }
 
 .portfolio-list__image {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 .portfolio-list__info-wrapper {
-    padding: 20px 24px;
+  padding: 20px 24px;
 
-    border: 1px solid #EEEEEE;
-    border-top: none;
+  border: 1px solid #eeeeee;
+  border-top: none;
 
-    transition: box-shadow $transition-function;
+  transition: box-shadow $transition-function;
 
-    @media screen and (min-width: 768px) and (max-width: 1199px) {
-        flex-grow: 1;
-    }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-grow: 1;
+  }
 }
 
 .portfolio-list__link:hover .portfolio-list__info-wrapper,
 .portfolio-list__link:focus .portfolio-list__info-wrapper {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-list__title,
 .portfolio-list__text {
-    @extend %reset-h-p;
+  @extend %reset-h-p;
 }
 
 .portfolio-list__title {
-    @include for-header (700, 18px, 2, 0.06em);
+  @include for-header(700, 18px, 2, 0.06em);
 }
 
 .portfolio-list__text {
-   @include for-text (400, 16px, 1.87);
-   letter-spacing: $main-letter-spacing;
+  @include for-text(400, 16px, 1.87);
+  letter-spacing: $main-letter-spacing;
 }
