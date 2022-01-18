@@ -291,8 +291,6 @@
   .contacts__link--for-header {
     font-size: 24px;
     line-height: 1.17;
-    -webkit-transition: font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -332,11 +330,27 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .contacts__link--for-header:hover,
+  .contacts__link--for-header:focus {
+    font-size: 27px;
+    line-height: 1.18;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .contacts__contact--for-header:nth-child(1):hover + .contacts__contact--for-header:nth-child(2),
   .contacts__contact--for-header:nth-child(1):focus + .contacts__contact--for-header:nth-child(2) {
     -webkit-transform: translateY(12px);
             transform: translateY(12px);
+  }
+}
+
+@media screen and (max-width: 767px) and (max-width: 400px) {
+  .contacts__contact--for-header:nth-child(1):hover + .contacts__contact--for-header:nth-child(2),
+  .contacts__contact--for-header:nth-child(1):focus + .contacts__contact--for-header:nth-child(2) {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
   }
 }
 
@@ -749,6 +763,18 @@
     font-family: roboto, sans-serif;
     font-weight: 500;
     font-size: 40px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: #212121;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .site-nav__link {
+    font-family: roboto, sans-serif;
+    font-weight: 500;
+    font-size: 32px;
     line-height: 1.18;
     letter-spacing: 0.02em;
     color: #212121;
@@ -1329,6 +1355,12 @@
   .modal {
     width: 100%;
     max-width: 528px;
+  }
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) and (min-height: 409px) {
+  .modal {
+    top: 90%;
   }
 }
 
