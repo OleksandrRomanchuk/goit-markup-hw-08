@@ -56,10 +56,10 @@
   position: relative;
   overflow: hidden;
 }
-.portfolio-list__link:hover .portfolio-list__overlay-text,
-.portfolio-list__link:focus .portfolio-list__overlay-text {
-  overflow: scroll;
-}
+// .portfolio-list__link:hover .portfolio-list__overlay-text,
+// .portfolio-list__link:focus .portfolio-list__overlay-text {
+//   overflow: scroll;
+// }
 
 .portfolio-list__overlay-text {
   position: absolute;
@@ -69,18 +69,17 @@
   width: 100%;
   height: 100%;
   @extend %reset-h-p;
-  padding: 77px 24px;
 
   @include for-text(400, 18px, 1.56);
   letter-spacing: $main-letter-spacing;
   color: $white-color;
 
-  background-color: $brand-color;
+  background-color: rgba(33, 150, 243, 0.9);
 
   transition: transform $transition-function;
 
   @media screen and (min-width: 320px) and (max-width: 380px) {
-    padding: 15px 15px;
+    padding: 15px 24px;
 
     font-size: 15px;
   }
@@ -91,6 +90,18 @@
 
   @media screen and (min-width: 400px) and (max-width: 430px) {
     padding: 30px 15px 30px;
+  }
+
+  @media screen and (min-width: 431px) and (max-width: 767px) {
+    padding: 77px 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 49px 24px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 63px 24px;
   }
 }
 
