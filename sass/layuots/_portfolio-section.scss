@@ -56,6 +56,10 @@
   position: relative;
   overflow: hidden;
 }
+.portfolio-list__link:hover .portfolio-list__overlay-text,
+.portfolio-list__link:focus .portfolio-list__overlay-text {
+  overflow: scroll;
+}
 
 .portfolio-list__overlay-text {
   position: absolute;
@@ -74,6 +78,20 @@
   background-color: $brand-color;
 
   transition: transform $transition-function;
+
+  @media screen and (min-width: 320px) and (max-width: 380px) {
+    padding: 15px 15px;
+
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 380px) and (max-width: 400px) {
+    padding: 30px 15px 20px;
+  }
+
+  @media screen and (min-width: 400px) and (max-width: 430px) {
+    padding: 30px 15px 30px;
+  }
 }
 
 .portfolio-list__link:hover .portfolio-list__overlay-text,
