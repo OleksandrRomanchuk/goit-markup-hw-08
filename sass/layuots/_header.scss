@@ -110,7 +110,7 @@
 }
 
 .site-nav__link {
-  display: block;
+  display: inline-block;
 
   transition: color $transition-function;
 
@@ -158,26 +158,55 @@
 
 .site-nav__link--current {
   color: $brand-color;
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: $brand-color;
+
+    border-radius: 2px;
+  }
 }
 
-.site-nav__link--current {
-  @media screen and (min-width: 768px) {
-    position: relative;
-
-    &::after {
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-
-      content: "";
-      display: block;
-
-      width: 100%;
-      height: 4px;
-
-      background-color: $brand-color;
-
-      border-radius: 2px;
-    }
+@media screen and (max-width: 767px) {
+  .site-nav__link--current::after {
+    bottom: -4px;
   }
+}
+
+.site-nav__link--underline {
+  position: relative;
+}
+
+.site-nav__link--underline::after {
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+
+  background-color: $brand-color;
+
+  border-radius: 2px;
+
+  transition: width $transition-function, left $transition-function;
+}
+
+.site-nav__link--underline:hover::after,
+.site-nav__link--underline:focus::after {
+  left: 0;
+  width: 100%;
 }
