@@ -218,6 +218,14 @@
   }
 }
 
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .contacts--for-header {
+    margin-top: 0;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .contacts--for-footer {
     margin-top: 8px;
@@ -236,11 +244,13 @@
   }
 }
 
-.contacts__contact--for-header {
-  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+@media screen and (max-width: 767px) {
+  .contacts__contact--for-header {
+    -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -338,6 +348,14 @@
   }
 }
 
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .contacts__link--for-header:hover,
+  .contacts__link--for-header:focus {
+    font-size: 24px;
+    line-height: 1.18;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .contacts__contact--for-header:nth-child(1):hover + .contacts__contact--for-header:nth-child(2),
   .contacts__contact--for-header:nth-child(1):focus + .contacts__contact--for-header:nth-child(2) {
@@ -346,11 +364,19 @@
   }
 }
 
-@media screen and (max-width: 767px) and (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .contacts__contact--for-header:nth-child(1):hover + .contacts__contact--for-header:nth-child(2),
   .contacts__contact--for-header:nth-child(1):focus + .contacts__contact--for-header:nth-child(2) {
     -webkit-transform: translateY(4px);
             transform: translateY(4px);
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .contacts__contact--for-header:nth-child(1):hover + .contacts__contact--for-header:nth-child(2),
+  .contacts__contact--for-header:nth-child(1):focus + .contacts__contact--for-header:nth-child(2) {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -484,6 +510,12 @@
 @media screen and (min-width: 768px) {
   .social-networks--for-header {
     display: none;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .social-networks--for-header {
+    margin: 0 auto;
   }
 }
 
@@ -648,7 +680,7 @@
   .menu-button {
     position: absolute;
     top: 10px;
-    right: 0;
+    right: 15px;
     z-index: 3;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -715,7 +747,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: portrait) {
   .menu-wrapper.is-open {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -725,6 +757,28 @@
         -ms-flex-direction: column;
             flex-direction: column;
     z-index: 2;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .menu-wrapper.is-open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .site-nav {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
   }
 }
 
@@ -1478,7 +1532,7 @@
 }
 
 .backdrop-form__group--first {
-  margin-top: 0;
+  margin-top: 12px;
 }
 
 .backdrop-form__label {
@@ -1643,6 +1697,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1657,6 +1713,16 @@
   .backdrop-form__checkbox {
     font-weight: 400;
     font-size: 12px;
+    line-height: 1.17;
+    color: #757575;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .backdrop-form__checkbox {
+    font-weight: 400;
+    font-size: 11px;
     line-height: 1.17;
     color: #757575;
     letter-spacing: 0.03em;

@@ -65,18 +65,6 @@
 
     transform: translate(-50%, -50%) scale(1);
   }
-
-  // @media screen and (min-width: 480px) and (min-aspect-ratio: 2/1) {
-  //   position: absolute;
-  //   top: 110%;
-  //   left: 50%;
-
-  //   width: 100%;
-  //   max-width: 450px;
-  //   min-height: 609px;
-
-  //   transform: translate(-50%, -50%) scale(1);
-  // }
 }
 
 .backdrop__is-hidden .modal {
@@ -140,7 +128,7 @@
 }
 
 .backdrop-form__group--first {
-  margin-top: 0;
+  margin-top: 12px;
 }
 
 .backdrop-form__label {
@@ -253,6 +241,7 @@
 
 .backdrop-form__checkbox {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
@@ -262,6 +251,11 @@
 
   @media screen and (max-width: 1199px) {
     @include for-text(400, 12px, 1.17);
+    letter-spacing: $main-letter-spacing;
+  }
+
+  @media screen and (max-width: 330px) {
+    @include for-text(400, 11px, 1.17);
     letter-spacing: $main-letter-spacing;
   }
 

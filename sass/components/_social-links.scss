@@ -17,6 +17,10 @@
   @media screen and (min-width: 768px) {
     display: none;
   }
+
+  @media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+    margin: 0 auto;
+  }
 }
 
 .social-networks--for-footer,
